@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="app">
+  <button type="primary" bindtap="sayHello" >Say hello</button>
+</view>
