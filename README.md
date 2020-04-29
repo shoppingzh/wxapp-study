@@ -1,6 +1,7 @@
 # wxapp-study
 微信小程序学习历程
 
+**tips**: 如果存在访问慢或图片查看不了情况，请访问：[https://gitee.com/shoppingzh/wxapp-study](https://gitee.com/shoppingzh/wxapp-study)
 
 
 
