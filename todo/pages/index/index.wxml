@@ -1,0 +1,26 @@
+<!--pages/index/index.wxml-->
+<view>
+  <view wx:if="{{todoList.length}}" class="todo-list">
+    <view wx:for="{{todoList}}" wx:key="id" 
+      class="todo-list__item {{item.done ? 'todo-list__item--done' : ''}}"
+      bindtap="handleToggleDone" bindlongpress="handleShowMenu" data-item="{{item}}">
+      <radio checked="{{item.done}}"></radio>
+      <view class="todo-list__item__inner">
+        <view class="todo-list__item__text">{{item.content}}</view>
+        <view class="todo-list__item__time">{{item.formatCreateTime}}</view>
+      </view>
+    </view> <!-- todo-list__item -->
+  </view>
+  <view wx:else>
+    <view style="text-align: center;">
+      <view class="tips">
+        <text>没有任何待办事项哦！</text>
+      </view>
+    </view>
+  </view>
+  <view style="text-align: center;">
+    <input wx:if="{{editMode}}" model:value="{{todoCentent}}" placeholder="请输入待办内容" focus="{{true}}"
+      confirm-type="done" bindconfirm="handleAdd" class="todo-input"></input>
+    <button wx:else size="mini" bindtap="handleShowAdd" type="primary">{{todoList.length ? '继续添加' : '现在添加一个'}}</button>
+  </view>
+</view>
